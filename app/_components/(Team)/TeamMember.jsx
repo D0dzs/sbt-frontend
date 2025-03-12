@@ -19,7 +19,7 @@ import { toast } from 'sonner';
 const TeamMember = ({ user, position, group, setRefresh, isItSubGroup }) => {
   const { user: currentUser } = useContext(UserContext);
   const privileged = isAdmin(currentUser);
-  const { firstName, lastName, avatarURL } = user;
+  const { id, firstName, lastName } = user;
   const [open, setOpen] = useState(false);
 
   const handleSubmit = async (e) => {
@@ -31,7 +31,7 @@ const TeamMember = ({ user, position, group, setRefresh, isItSubGroup }) => {
       headers: {
         'Content-Type': 'application/json',
       },
-      body: JSON.stringify({ firstName, lastName, avatarURL, group, isItSubGroup }),
+      body: JSON.stringify({ id, firstName, lastName, group, isItSubGroup }),
     });
 
     const ctx = await response.json();

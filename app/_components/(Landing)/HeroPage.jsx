@@ -1,11 +1,10 @@
 'use client';
 
 import { ChevronDown, SunIcon } from 'lucide-react';
-import { useContext, useEffect, useState } from 'react';
-import { MobileContext } from '../Providers/Screen-provider';
+import { useEffect, useState } from 'react';
+import HeroVideo from './HeroVideo';
 
 const HeroScreen = () => {
-  const isMobile = useContext(MobileContext);
   const [watt, setWatt] = useState(0);
   const [error, setError] = useState(false);
 
@@ -31,20 +30,7 @@ const HeroScreen = () => {
   return (
     <div id="hero-wrapper" className="relative grid h-[80vh] w-screen items-center justify-center lg:h-[90vh]">
       <div className="fixed top-0 left-0 h-fit w-fit">
-        {!isMobile ? (
-          <video
-            className="fixed h-full w-full object-cover"
-            src="/hero/hero_video.mp4"
-            loop
-            autoPlay
-            muted
-            disablePictureInPicture
-            playsInline
-          />
-        ) : (
-          // eslint-disable-next-line @next/next/no-img-element
-          <img className="fixed h-full w-full object-cover" src="/images/carousel/12kep.webp" alt="Hero Image" />
-        )}
+        <HeroVideo />
       </div>
 
       {error ? (
@@ -66,7 +52,7 @@ const HeroScreen = () => {
           />
           <p className="text-sm drop-shadow-sm lg:text-base">
             Jelenlegi napsütésben
-            <br /> <b className="text-yellow-300">{watt}</b> Wattot termel a hajó
+            <br /> <b className="text-yellow-300">{watt ?? 'N/A'}</b> Wattot termel a hajó
           </p>
         </div>
       )}
