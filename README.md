@@ -3,7 +3,7 @@
 _This is an exam project for a small group of students._<br />
 
 This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).<br />
-For live demo [**click here**](https://sbt-frontend-preview.vercel.app/).
+For live demo [**click here**](https://sbt-frontend-development.up.railway.app).
 
 ## Core Packages & Technologies
 
