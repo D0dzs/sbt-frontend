@@ -3,16 +3,16 @@ const nextConfig = {
   images: {
     remotePatterns: [
       {
-        protocol: 'http',
-        hostname: 'localhost',
-        port: '3000',
+        protocol: 'https',
+        hostname: 'sbt-backend-development.up.railway.app',
+        port: '8080',
         pathname: '/**',
       },
     ],
     formats: ['image/webp'],
   },
   env: {
-    BACKEND_URL: 'http://localhost:8080',
+    BACKEND_URL: 'https://sbt-backend-development.up.railway.app',
   },
   eslint: {
     ignoreDuringBuilds: true,
