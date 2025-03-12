@@ -22,7 +22,7 @@ const UserTable = () => {
 
   const fetchUsers = useCallback(async () => {
     try {
-      const response = await fetch(`${process.env.API_URL}/users/all`, {
+      const response = await fetch(`${process.env.BACKEND_URL}/api/users/all`, {
         credentials: 'include',
         headers: {
           'Content-Type': 'application/json',

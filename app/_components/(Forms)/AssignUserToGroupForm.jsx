@@ -20,7 +20,7 @@ const AssignUserToGroupForm = ({ users, groups, setRefresh }) => {
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    const response = await fetch(`${process.env.API_URL}/group/assign-position`, {
+    const response = await fetch(`${process.env.BACKEND_URL}/api/group/assign-position`, {
       credentials: 'include',
       headers: {
         'Content-Type': 'application/json',

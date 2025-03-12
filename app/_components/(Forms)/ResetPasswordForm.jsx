@@ -53,7 +53,7 @@ const ResetPasswordForm = ({ user, isOpen, onOpenChange }) => {
       const { passwordConfirm, ...submissionData } = formState;
 
       try {
-        const response = await fetch(`${process.env.API_URL}/users/change-password`, {
+        const response = await fetch(`${process.env.BACKEND_URL}/api/users/change-password`, {
           credentials: 'include',
           headers: {
             'Content-Type': 'application/json',

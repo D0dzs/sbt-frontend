@@ -12,7 +12,7 @@ const DisplayGroups = ({ setRefresh, refresh }) => {
 
   const loadGroups = async () => {
     try {
-      const response = await fetch(`${process.env.API_URL}/group/public`);
+      const response = await fetch(`${process.env.BACKEND_URL}/api/group/public`);
       const { groups } = await response.json();
       setGroups(groups);
       setLoading(false);

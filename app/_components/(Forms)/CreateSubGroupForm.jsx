@@ -29,7 +29,7 @@ const CreateSubGroupForm = ({ users, groups, setRefresh }) => {
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    const response = await fetch(`${process.env.API_URL}/subgroup/create`, {
+    const response = await fetch(`${process.env.BACKEND_URL}/api/subgroup/create`, {
       credentials: 'include',
       headers: {
         'Content-Type': 'application/json',

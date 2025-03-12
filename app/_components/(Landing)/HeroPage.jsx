@@ -10,7 +10,7 @@ const HeroScreen = () => {
 
   const fetchWatt = async () => {
     try {
-      const response = await fetch(`${process.env.API_URL}/forecast/latest`);
+      const response = await fetch(`${process.env.BACKEND_URL}/api/forecast/latest`);
       const { value } = await response.json();
       setWatt(value);
     } catch (error) {

@@ -14,7 +14,7 @@ const TeamPageContent = () => {
 
   const fetchUsers = async () => {
     try {
-      const res = await fetch(`${process.env.API_URL}/users/all`, { credentials: 'include' });
+      const res = await fetch(`${process.env.BACKEND_URL}/api/users/all`, { credentials: 'include' });
       const ctx = await res.json();
       const { users } = ctx;
       setUsers(users);
@@ -25,7 +25,7 @@ const TeamPageContent = () => {
 
   const fetchGroups = async () => {
     try {
-      const res = await fetch(`${process.env.API_URL}/group/all`, { credentials: 'include' });
+      const res = await fetch(`${process.env.BACKEND_URL}/api/group/all`, { credentials: 'include' });
       const ctx = await res.json();
       const { groups } = ctx;
       setGroups(groups);
@@ -36,7 +36,7 @@ const TeamPageContent = () => {
 
   const fetchSGroups = async () => {
     try {
-      const res = await fetch(`${process.env.API_URL}/subgroup/all`, { credentials: 'include' });
+      const res = await fetch(`${process.env.BACKEND_URL}/api/subgroup/all`, { credentials: 'include' });
       const ctx = await res.json();
       const { groups } = ctx;
       setSGroups(groups);

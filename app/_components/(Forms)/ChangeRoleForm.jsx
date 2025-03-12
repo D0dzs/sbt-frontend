@@ -16,7 +16,7 @@ const ChangeRoleForm = ({ user, fetchUsers }) => {
     const requestBody = { id: user.id, newRole };
 
     try {
-      const response = await fetch(`${process.env.API_URL}/users/change-role`, {
+      const response = await fetch(`${process.env.BACKEND_URL}/api/users/change-role`, {
         credentials: 'include',
         headers: {
           'Content-Type': 'application/json',

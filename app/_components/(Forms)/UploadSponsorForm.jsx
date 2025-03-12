@@ -65,7 +65,7 @@ const UploadSponsorForm = () => {
     formData.append('sLogo', formState.sLogo);
 
     try {
-      const res = await fetch(`${process.env.API_URL}/sponsor/upload`, {
+      const res = await fetch(`${process.env.BACKEND_URL}/api/sponsor/upload`, {
         method: 'POST',
         credentials: 'include',
         body: formData,

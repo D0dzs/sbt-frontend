@@ -4,7 +4,7 @@ export async function middleware(request) {
   const token = request.cookies.get('token')?.value;
 
   try {
-    const response = await fetch(`${process.env.API_URL}/auth/me`, {
+    const response = await fetch(`${process.env.BACKEND_URL}/api/auth/me`, {
       credentials: 'include',
       headers: {
         'Content-Type': 'application/json',

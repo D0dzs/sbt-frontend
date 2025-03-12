@@ -28,7 +28,7 @@ const CreateGroupForm = ({ users, setRefresh }) => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const response = await fetch(`${process.env.API_URL}/group/create`, {
+      const response = await fetch(`${process.env.BACKEND_URL}/api/group/create`, {
         credentials: 'include',
         headers: {
           'Content-Type': 'application/json',

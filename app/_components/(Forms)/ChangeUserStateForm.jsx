@@ -23,7 +23,7 @@ const ChangeUserStateForm = ({ user, fetchUsers }) => {
 
     try {
       const requestBody = { id: user.id, firstName: user.firstName, lastName: user.lastName };
-      const response = await fetch(`${process.env.API_URL}/users/change-state`, {
+      const response = await fetch(`${process.env.BACKEND_URL}/api/users/change-state`, {
         credentials: 'include',
         headers: {
           'Content-Type': 'application/json',

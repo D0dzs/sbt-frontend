@@ -20,7 +20,7 @@ const AssignUserToSubGroupForm = ({ users, sGroups, setRefresh }) => {
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    const response = await fetch(`${process.env.API_URL}/subgroup/assign-position`, {
+    const response = await fetch(`${process.env.BACKEND_URL}/api/subgroup/assign-position`, {
       credentials: 'include',
       headers: {
         'Content-Type': 'application/json',

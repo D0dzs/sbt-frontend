@@ -70,7 +70,7 @@ const RegisterNewUserForm = ({ currentIndex, fetchUsers }) => {
       formData.append('role', submissionData.role);
       formData.append('avatar', submissionData.avatar);
 
-      const response = await fetch(`${process.env.API_URL}/users/register`, {
+      const response = await fetch(`${process.env.BACKEND_URL}/api/users/register`, {
         credentials: 'include',
         method: 'POST',
         body: formData,

@@ -10,7 +10,6 @@ const VideoLoader = ({ setLoading, videoRef }) => {
     if (!video) return;
 
     const handleCanPlay = () => {
-      console.log('Video can play');
       setLoading(false);
     };
 
