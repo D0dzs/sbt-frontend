@@ -41,7 +41,6 @@ const LoginForm = () => {
 
         Cookies.set('token', ctx.token, {
           domain: '.up.railway.app',
-          sameSite: 'Lax',
           expires: new Date(Date.now() + 45 * 60 * 1000),
         });
 
