@@ -6,6 +6,7 @@ import { Separator } from '~/components/ui/separator';
 const MobileSBPS = () => {
   return (
     <div className="w-screen px-4 break-words">
+      {/* eslint-disable-next-line */}
       <img src="/projekt_solar_21_9.webp" alt="Image" className="mx-auto aspect-21/9 max-h-56 rounded-4xl shadow-xl" />
       <div className="mt-4 flex w-full gap-2">
         <div className="my-auto">

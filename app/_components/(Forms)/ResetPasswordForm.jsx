@@ -82,7 +82,7 @@ const ResetPasswordForm = ({ user, isOpen, onOpenChange }) => {
 
   return (
     <Dialog open={isOpen} onOpenChange={handleOpenChange}>
-      <DialogTrigger className="mx-auto w-fit cursor-pointer text-center text-blue-500 underline">
+      <DialogTrigger className="text-bme-blue dark:text-bme-orange dark:hover:text-hovered-bme-orange hover:text-hovered-bme-blue mx-auto w-fit cursor-pointer text-center underline">
         Módosítás
       </DialogTrigger>
       <DialogContent>
@@ -92,7 +92,7 @@ const ResetPasswordForm = ({ user, isOpen, onOpenChange }) => {
           </DialogTitle>
           <DialogDescription>
             <span className="w-full text-xs font-semibold text-[#ff0000]">
-              A jelszó megváltoztatása követoen el kell kuldeni a felhasználónak!
+              A jelszó megváltoztatását követően el kell küldeni a felhasználónak!
             </span>
           </DialogDescription>
         </DialogHeader>
@@ -141,7 +141,7 @@ const ResetPasswordForm = ({ user, isOpen, onOpenChange }) => {
 
           <DialogFooter>
             <Button type="submit" className="cursor-pointer">
-              Változtatás
+              Módosítás
             </Button>
           </DialogFooter>
         </form>

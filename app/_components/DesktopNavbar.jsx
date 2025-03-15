@@ -19,10 +19,10 @@ const DesktopNavbar = ({ handleLogout, privileged, user }) => {
           <Link href={'/team'} scroll>
             Rólunk
           </Link>
-          <Link href={''} scroll>
+          <Link href={'/news'} scroll>
             Hírek
           </Link>
-          <Link href={''} scroll>
+          <Link href={'/gallery'} scroll>
             Galéria
           </Link>
           <Link href={'/sponsors'} scroll>

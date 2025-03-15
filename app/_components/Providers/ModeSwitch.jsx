@@ -32,7 +32,7 @@ export function ModeToggle() {
         className="stroke-bme-black dark:stroke-bme-orange lg:!stroke-bme-black hidden dark:block"
       />
       <MoonIcon size={32} strokeWidth={2.25} className="stroke-bme-black block dark:hidden" />
-      <span className="sr-only">Toggle theme</span>
+      <span className="sr-only">Téma állítása</span>
     </div>
   );
 }

@@ -63,11 +63,11 @@ const CreateSubGroupForm = ({ users, groups, setRefresh }) => {
   return (
     <Dialog open={open} onOpenChange={setOpen}>
       <DialogTrigger asChild>
-        <Button className="cursor-pointer">Al-csoport létrehozása</Button>
+        <Button className="cursor-pointer">Alcsoport létrehozása</Button>
       </DialogTrigger>
       <DialogContent>
         <DialogHeader>
-          <DialogTitle className={'lg:text-2xl'}>Al-csoport létrehozása</DialogTitle>
+          <DialogTitle className={'lg:text-2xl'}>Alcsoport létrehozása</DialogTitle>
         </DialogHeader>
         <div className="max-h-[60vh] overflow-y-auto">
           <form className="mt-4 flex flex-col gap-4 p-1" onSubmit={(e) => handleSubmit(e)}>
@@ -89,7 +89,7 @@ const CreateSubGroupForm = ({ users, groups, setRefresh }) => {
                     ))
                   ) : (
                     <SelectItem value="No users found" key="no-users" disabled>
-                      No groups found
+                      Nincs csoport
                     </SelectItem>
                   )}
                 </SelectContent>
@@ -128,7 +128,7 @@ const CreateSubGroupForm = ({ users, groups, setRefresh }) => {
                     ))
                   ) : (
                     <SelectItem value="No users found" key="no-users" disabled>
-                      No users found
+                      Nincs felhasználó
                     </SelectItem>
                   )}
                 </SelectContent>

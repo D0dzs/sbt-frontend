@@ -18,7 +18,11 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <ReactLenis root>
-      <html lang="hu" className={`${poppins.variable} ${comfortaa.variable} overflow-x-clip`} suppressHydrationWarning>
+      <html
+        lang="hu"
+        className={`${poppins.variable} ${comfortaa.variable} selection:bg-bme-blue/50 selection:text-bme-orange overflow-x-clip`}
+        suppressHydrationWarning
+      >
         <body className="font-poppins !bg-bme-lprimary dark:!bg-bme-dprimary">
           <Providers>
             <main className="!text-bme-black dark:!text-bme-white">{children}</main>

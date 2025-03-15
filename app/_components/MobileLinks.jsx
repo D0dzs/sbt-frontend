@@ -2,7 +2,7 @@
 
 import { CommandIcon, LogOutIcon, XIcon } from 'lucide-react';
 import Link from 'next/link';
-import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '~/components/ui/accordion';
+import { Accordion, AccordionItem, AccordionTrigger } from '~/components/ui/accordion';
 
 const MobileLinks = ({ isOpen, handleToggle, user, handleLogout, privileged }) => {
   return (
@@ -71,7 +71,7 @@ const MobileLinks = ({ isOpen, handleToggle, user, handleLogout, privileged }) =
                   href={'/login'}
                   className="dark:bg-bme-white bg-bme-black text-bme-white dark:text-bme-black mx-auto mt-6 flex w-fit cursor-pointer items-center justify-between gap-1 rounded-full px-12 py-2 text-center text-2xl lg:mt-0 lg:text-xl"
                   onClick={() => {
-                    setIsOpen(false);
+                    handleToggle();
                     handleLogout();
                   }}
                 >

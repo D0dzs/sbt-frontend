@@ -57,22 +57,26 @@ const ChangeUserStateForm = ({ user, fetchUsers }) => {
           <DialogHeader>
             <DialogTitle className={'lg:text-2xl'}>Aktív - Inaktív státusz állítása</DialogTitle>
             <DialogDescription>
-              Biztosan at szeretned allitani{' '}
+              Biztosan át szeretnéd állítani{' '}
               <span className="font-semibold">
                 {user.lastName} {user.firstName}
               </span>{' '}
-              statuszat a kovetkezore?
+              státuszát a következőre?
               <br />
               <code className="text-bme-blue dark:text-bme-orange text-lg font-semibold">
                 {user.state ? 'Aktív' : 'Inaktív'}
               </code>
             </DialogDescription>
             <DialogFooter>
-              <Button className="cursor-pointer" variant="outline" onClick={() => setOpen((prev) => !prev)}>
-                Cancel
+              <Button
+                className="bg-bme-blue hover:bg-hovered-bme-blue dark:bg-bme-orange dark:text-bme-black dark:hover:bg-hovered-bme-orange cursor-pointer"
+                variant="outline"
+                onClick={() => setOpen((prev) => !prev)}
+              >
+                Mégsem
               </Button>
               <Button className="cursor-pointer" variant="destructive" onClick={handleSubmission}>
-                Confirm
+                Megerősítés
               </Button>
             </DialogFooter>
           </DialogHeader>

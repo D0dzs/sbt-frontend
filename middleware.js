@@ -1,9 +1,11 @@
+import { headers } from 'next/headers';
 import { NextResponse } from 'next/server';
 
 export async function middleware(request) {
-  const token = request.cookies.get('token')?.value;
-
   try {
+    const header = headers().get('cookie');
+    const token = header.split('=')[1];
+
     const response = await fetch(`${process.env.BACKEND_URL}/api/auth/me`, {
       credentials: 'include',
       headers: {

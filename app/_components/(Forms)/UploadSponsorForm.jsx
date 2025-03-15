@@ -138,7 +138,7 @@ const UploadSponsorForm = () => {
                       />
                     </svg>
                     <p className="mb-px text-sm text-gray-500 dark:text-gray-400">
-                      <span className="font-semibold">Click to upload</span>
+                      <span className="font-semibold">Kattints ide a kép feltöltéséhez</span>
                     </p>
                     <code className="text-xs text-gray-500 dark:text-gray-400">
                       PNG, JPG, SVG and WEBP only (max 5MB)

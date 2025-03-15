@@ -9,8 +9,10 @@ const GroupCard = ({ className, imageSource, nameOfTheGroup, descriptionOfTheGro
       {...props}
     >
       <div className="relative h-64">
+        {/* eslint-disable */}
         <img src={imageSource} className="absolute top-0 left-0 z-3 h-full w-full object-cover" />
         <img src={imageSource} className="h-full w-full object-cover blur-2xl" />
+        {/* eslint-enable */}
       </div>
       <article className="z-15 flex flex-1 flex-col gap-2 p-4">
         <h3 className="text-center text-lg lg:text-xl">{nameOfTheGroup}</h3>

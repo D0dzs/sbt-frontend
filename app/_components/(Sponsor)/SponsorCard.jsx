@@ -11,6 +11,7 @@ const SponsorCard = ({ sponsorImage, sponsorURL, sponsorName, className, imageCl
     >
       <Link href={sponsorURL} target="_blank" rel="noopener noreferrer">
         <div className="flex h-full items-center justify-center">
+          {/* eslint-disable-next-line */}
           <img className={`${cn('h-auto w-full object-fill', imageClassName)}`} src={sponsorImage} alt={sponsorName} />
         </div>
       </Link>
