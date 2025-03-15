@@ -3,10 +3,12 @@ import { NextResponse } from 'next/server';
 
 export async function middleware(request) {
   try {
+    console.log('Middleware executed');
+    console.log(headers());
     const header = headers().get('cookie');
-    console.log('DEBUG: ', header);
+    console.log('DEBUG (cookie): ', header);
     const token = header.split('=')[1];
-    console.log('DEBUG: ', token);
+    console.log('DEBUG (token): ', token);
 
     const response = await fetch(`${process.env.BACKEND_URL}/api/auth/me`, {
       credentials: 'include',
