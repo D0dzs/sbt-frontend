@@ -5,7 +5,7 @@ import { useContext, useState } from 'react';
 import { toast } from 'sonner';
 import { UserContext } from '../Providers/User-provider';
 import { EyeIcon, EyeClosedIcon } from 'lucide-react';
-import { set as setCookie } from 'js-cookie';
+import Cookies from 'js-cookie';
 
 const LoginForm = () => {
   const [visible, setVisible] = useState(false);
@@ -30,20 +30,25 @@ const LoginForm = () => {
     try {
       const res = await fetch(`${process.env.BACKEND_URL}/api/auth/login`, {
         method: 'POST',
-        credentials: 'include',
         headers: {
           'Content-Type': 'application/json',
         },
         body: JSON.stringify(formState),
       });
 
-      const ctx = await res.json();
       if (res.ok) {
+        const ctx = await res.json();
+        Cookies.set('token', ctx.token, {
+          expires: new Date().getTime() + 45 * 60 * 1000,
+          path: '/',
+          sameSite: 'strict',
+        });
+
         toast.success(ctx.message);
-        setRefresh((ctx) => !ctx);
-        setCookie('token', ctx.token, { expires: '45min', secure: true });
         router.replace(ctx.redirect, { scroll: true });
+        setRefresh((ctx) => !ctx);
       } else {
+        const ctx = await res.json();
         toast.error(ctx.message);
       }
     } catch (error) {
