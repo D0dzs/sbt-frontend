@@ -38,16 +38,15 @@ const LoginForm = () => {
 
       if (res.ok) {
         const ctx = await res.json();
-        Cookies.set('token', ctx.token, {
-          path: '/',
-          sameSite: 'strict',
-        });
 
+        Cookies.set('token', ctx.token);
+        Cookies.set('token', ctx.token, { domain: process.env.BACKEND_URL, path: '/api' });
         toast.success(ctx.message);
         router.replace(ctx.redirect, { scroll: true });
         setRefresh((ctx) => !ctx);
       } else {
         const ctx = await res.json();
+
         toast.error(ctx.message);
       }
     } catch (error) {
