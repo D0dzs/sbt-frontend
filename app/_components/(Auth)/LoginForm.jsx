@@ -39,7 +39,12 @@ const LoginForm = () => {
       if (res.ok) {
         const ctx = await res.json();
 
-        Cookies.set('ftoken', ctx.token);
+        Cookies.set('token', ctx.token, {
+          domain: '.up.railway.app',
+          sameSite: 'Lax',
+          expires: new Date(Date.now() + 45 * 60 * 1000),
+        });
+
         toast.success(ctx.message);
         router.replace(ctx.redirect, { scroll: true });
         setRefresh((ctx) => !ctx);
