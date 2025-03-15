@@ -4,11 +4,14 @@ import { cookies } from 'next/headers';
 export async function middleware(request) {
   try {
     const cookieStore = cookies();
-    const token = cookieStore.get('token')?.value;
+    const token = cookieStore.get('ftoken')?.value;
     if (!token) return NextResponse.redirect(new URL('/', request.url));
 
     const response = await fetch(`${process.env.BACKEND_URL}/api/auth/me`, {
       credentials: 'include',
+      headers: {
+        Cookie: `token=${token}`,
+      },
     });
 
     const data = await response.json();

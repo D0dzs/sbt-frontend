@@ -10,7 +10,7 @@ export const metadata = {
 
 const Page = async () => {
   const cookieStore = cookies();
-  const token = cookieStore.has('token');
+  const token = cookieStore.has('ftoken');
   if (token) redirect('/');
 
   return (

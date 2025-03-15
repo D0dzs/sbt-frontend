@@ -39,8 +39,7 @@ const LoginForm = () => {
       if (res.ok) {
         const ctx = await res.json();
 
-        Cookies.set('token', ctx.token);
-        Cookies.set('token', ctx.token, { domain: process.env.BACKEND_URL, path: '/api' });
+        Cookies.set('ftoken', ctx.token);
         toast.success(ctx.message);
         router.replace(ctx.redirect, { scroll: true });
         setRefresh((ctx) => !ctx);
