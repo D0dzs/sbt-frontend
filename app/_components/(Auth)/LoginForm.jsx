@@ -40,7 +40,6 @@ const LoginForm = () => {
         const ctx = await res.json();
 
         Cookies.set('token', ctx.token, {
-          domain: '.up.railway.app',
           expires: new Date(Date.now() + 45 * 60 * 1000),
         });
 
