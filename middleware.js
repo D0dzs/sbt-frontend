@@ -4,7 +4,9 @@ import { NextResponse } from 'next/server';
 export async function middleware(request) {
   try {
     const header = headers().get('cookie');
+    console.log('DEBUG: ', header);
     const token = header.split('=')[1];
+    console.log('DEBUG: ', token);
 
     const response = await fetch(`${process.env.BACKEND_URL}/api/auth/me`, {
       credentials: 'include',
