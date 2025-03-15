@@ -39,7 +39,6 @@ const LoginForm = () => {
       if (res.ok) {
         const ctx = await res.json();
         Cookies.set('token', ctx.token, {
-          expires: new Date().getTime() + 45 * 60 * 1000,
           path: '/',
           sameSite: 'strict',
         });
