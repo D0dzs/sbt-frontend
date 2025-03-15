@@ -6,7 +6,7 @@
     "dev": "rimraf .next && next dev",
     "dev:network": "rimraf .next && next dev -H 0.0.0.0",
     "build": "next build",
-    "start": "next start",
+    "start": "next start -p 3000",
     "lint": "next lint"
   },
   "dependencies": {
@@ -42,6 +42,6 @@
     "postcss": "^8.5.1",
     "prettier": "^3.4.2",
     "prettier-plugin-tailwindcss": "^0.6.11",
-    "tailwindcss": "^4.0.5"
+    "tailwindcss": "^4.0.14"
   }
 }
