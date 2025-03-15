@@ -101,7 +101,7 @@ const LoginForm = () => {
           onClick={handleSubmit}
           className="bg-bme-dfront hover:bg-bme-dprimary dark:bg-bme-lprimary hover:dark:bg-bme-lsecondary text-bme-white dark:text-bme-black w-full cursor-pointer rounded-lg px-4 py-4 text-lg font-semibold transition-colors"
         >
-          Login
+          Bejelentkezés
         </button>
       </form>
     </>

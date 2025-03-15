@@ -93,7 +93,7 @@ const AssignUserToSubGroupForm = ({ users, sGroups, setRefresh }) => {
                   ))
                 ) : (
                   <SelectItem value="No users found" key="no-users" disabled>
-                    No users found
+                    Nincs felhasználó
                   </SelectItem>
                 )}
               </SelectContent>
@@ -101,7 +101,7 @@ const AssignUserToSubGroupForm = ({ users, sGroups, setRefresh }) => {
           </div>
           <div className="mb-4">
             <label htmlFor="subgroupname" className="mb-1 block text-sm lg:text-base">
-              Al-Csoport
+              Alcsoport
             </label>
             <Select onValueChange={handleGroupChange} disabled={!formState.id}>
               <SelectTrigger>
@@ -120,7 +120,7 @@ const AssignUserToSubGroupForm = ({ users, sGroups, setRefresh }) => {
                   ))
                 ) : (
                   <SelectItem value="No sub-groups found" key="no-sub-groups" disabled>
-                    No sub-groups found
+                    Nincs alcsoprt
                   </SelectItem>
                 )}
               </SelectContent>

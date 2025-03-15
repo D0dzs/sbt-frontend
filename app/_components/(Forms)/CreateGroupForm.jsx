@@ -91,7 +91,7 @@ const CreateGroupForm = ({ users, setRefresh }) => {
                     ))
                   ) : (
                     <SelectItem value="No users found" key="no-users" disabled>
-                      No users found
+                      Nincs felhasználó
                     </SelectItem>
                   )}
                 </SelectContent>

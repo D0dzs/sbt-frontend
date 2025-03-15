@@ -21,14 +21,14 @@ const PriviligedControls = ({ users, groups, sGroups, error, setRefresh }) => {
       </p>
       <div className="flex w-full flex-wrap place-items-center justify-center gap-8 lg:gap-12">
         <div>
-          <h3 className="mb-3 text-center lg:text-2xl">Csoporttal kapcsolatos adatrogzites</h3>
+          <h3 className="mb-3 text-center lg:text-2xl">Csoporttal kapcsolatos adatrögzítés</h3>
           <div className="mx-auto flex max-w-96 flex-wrap place-items-center gap-4 *:w-full lg:flex-col">
             <CreateGroupForm users={users} setRefresh={setRefresh} />
             <AssignUserToGroupForm users={users} groups={groups} setRefresh={setRefresh} />
           </div>
         </div>
         <div>
-          <h3 className="mb-3 text-center lg:text-2xl">Alcsoporttal kapcsolatos adatrogzites</h3>
+          <h3 className="mb-3 text-center lg:text-2xl">Alcsoporttal kapcsolatos adatrögzítés</h3>
           <div className="mx-auto flex max-w-96 flex-wrap place-items-center gap-4 *:w-full lg:flex-col">
             <CreateSubGroupForm users={users} groups={groups} setRefresh={setRefresh} />
             <AssignUserToSubGroupForm users={users} sGroups={sGroups} setRefresh={setRefresh} />

@@ -97,7 +97,7 @@ const AssignUserToGroupForm = ({ users, groups, setRefresh }) => {
                   ))
                 ) : (
                   <SelectItem value="No groups found" key="no-groups" disabled>
-                    No groups found
+                    Nincs csoport
                   </SelectItem>
                 )}
               </SelectContent>
@@ -124,7 +124,7 @@ const AssignUserToGroupForm = ({ users, groups, setRefresh }) => {
                   ))
                 ) : (
                   <SelectItem value="No users found" key="no-users" disabled>
-                    No users found
+                    Nincs felhasználó
                   </SelectItem>
                 )}
               </SelectContent>

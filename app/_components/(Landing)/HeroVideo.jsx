@@ -37,7 +37,7 @@ const VideoPlaceholder = () => {
     <div className="bg-bme-lsecondary dark:bg-bme-dfront fixed flex h-full w-full items-center justify-center object-cover backdrop-blur-sm">
       <div className="flex flex-col items-center gap-3">
         <div className="border-bme-blue dark:border-bme-orange h-8 w-8 animate-spin rounded-full border-4 border-t-transparent dark:border-t-transparent" />
-        <div className="dark:text-bme-white/90 text-sm">Loading video...</div>
+        <div className="dark:text-bme-white/90 text-sm">Videó betöltése</div>
       </div>
     </div>
   );

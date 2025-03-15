@@ -27,7 +27,7 @@ const DisplayGroups = ({ setRefresh, refresh }) => {
   }, [refresh]);
 
   return loading ? (
-    <p className="w-full text-center">Loading...</p>
+    <p className="w-full text-center">Betöltés...</p>
   ) : groups && groups.length > 0 ? (
     groups.map((group, idx) => (
       <Container key={idx} className={'relative p-5'}>
@@ -35,7 +35,7 @@ const DisplayGroups = ({ setRefresh, refresh }) => {
       </Container>
     ))
   ) : (
-    <p className="w-full text-center">No groups found.</p>
+    <p className="w-full text-center">Egy csoport sem található.</p>
   );
 };
 

@@ -10,6 +10,7 @@ const SolarBoatProjectSlide = () => {
         <div className="bg-bme-blue dark:bg-bme-orange dark:shadow-bme-orange shadow-bme-blue mx-auto flex h-10 w-fit items-center rounded-t-lg px-12 py-8 shadow-[0px_0px_6px_2px]">
           <h1 className="text-bme-white dark:text-bme-black text-4xl">SolarBoat Projekt</h1>
         </div>
+        {/* eslint-disable-next-line */}
         <img src="/projekt_solar_21_9.webp" alt="Image" className="aspect-21/9 max-h-56 rounded-4xl shadow-xl" />
       </div>
       <div className="z-5 flex h-fit gap-8 px-8">
