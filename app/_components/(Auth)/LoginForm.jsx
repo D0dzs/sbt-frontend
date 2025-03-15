@@ -5,6 +5,7 @@ import { useContext, useState } from 'react';
 import { toast } from 'sonner';
 import { UserContext } from '../Providers/User-provider';
 import { EyeIcon, EyeClosedIcon } from 'lucide-react';
+import { set as setCookie } from 'js-cookie';
 
 const LoginForm = () => {
   const [visible, setVisible] = useState(false);
@@ -40,6 +41,7 @@ const LoginForm = () => {
       if (res.ok) {
         toast.success(ctx.message);
         setRefresh((ctx) => !ctx);
+        setCookie('token', ctx.token, { expires: '45min', secure: true });
         router.replace(ctx.redirect, { scroll: true });
       } else {
         toast.error(ctx.message);
