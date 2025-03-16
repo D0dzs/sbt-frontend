@@ -39,11 +39,6 @@ const LoginForm = () => {
       if (res.ok) {
         const ctx = await res.json();
 
-        Cookies.set('token', ctx.token, {
-          expires: new Date(Date.now() + 45 * 60 * 1000),
-          sameSite: 'None',
-        });
-
         toast.success(ctx.message);
         router.replace(ctx.redirect, { scroll: true });
         setRefresh((ctx) => !ctx);
