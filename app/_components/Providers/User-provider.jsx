@@ -1,9 +1,9 @@
 'use client';
 
+import Cookies from 'js-cookie';
 import { useRouter } from 'next/navigation';
 import { createContext, useCallback, useEffect, useState } from 'react';
 import { toast } from 'sonner';
-import clientFetch from '~/lib/fetchWithToken';
 
 export const UserContext = createContext();
 
@@ -12,10 +12,15 @@ export const UserProvider = ({ children }) => {
   const [refresh, setRefresh] = useState(false);
   const [loading, setLoading] = useState(true);
   const router = useRouter();
+  const token = Cookies.get('token');
 
   const logout = useCallback(async () => {
-    const res = await clientFetch(`${process.env.BACKEND_URL}/api/auth/logout`, {
+    const res = await fetch(`${process.env.BACKEND_URL}/api/auth/logout`, {
       method: 'POST',
+      credentials: 'include',
+      headers: {
+        Cookie: `token=${token}`,
+      },
     });
 
     const ctx = await res.json();
@@ -29,20 +34,32 @@ export const UserProvider = ({ children }) => {
     setLoading(true);
 
     try {
-      const response = await clientFetch(`${process.env.BACKEND_URL}/api/auth/me`, {
+      const response = await fetch(`${process.env.BACKEND_URL}/api/auth/me`, {
         method: 'GET',
+        credentials: 'include',
+        headers: {
+          Cookie: `token=${token}`,
+        },
       }).catch((error) => {
         throw error;
       });
 
       if (response.status === 401) {
-        const refreshResponse = await clientFetch(`${process.env.BACKEND_URL}/api/auth/refresh`, {
+        const refreshResponse = await fetch(`${process.env.BACKEND_URL}/api/auth/refresh`, {
           method: 'POST',
+          credentials: 'include',
+          headers: {
+            Cookie: `token=${token}`,
+          },
         });
 
         if (refreshResponse.ok) {
-          const retryResponse = await clientFetch(`${process.env.BACKEND_URL}/api/auth/me`, {
+          const retryResponse = await fetch(`${process.env.BACKEND_URL}/api/auth/me`, {
             method: 'GET',
+            credentials: 'include',
+            headers: {
+              Cookie: `token=${token}`,
+            },
           });
 
           if (retryResponse.ok) {
