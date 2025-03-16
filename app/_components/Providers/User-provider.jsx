@@ -18,9 +18,6 @@ export const UserProvider = ({ children }) => {
     const res = await fetch(`${process.env.BACKEND_URL}/api/auth/logout`, {
       method: 'POST',
       credentials: 'include',
-      headers: {
-        Cookie: `token=${token}`,
-      },
     });
 
     const ctx = await res.json();
@@ -37,9 +34,6 @@ export const UserProvider = ({ children }) => {
       const response = await fetch(`${process.env.BACKEND_URL}/api/auth/me`, {
         method: 'GET',
         credentials: 'include',
-        headers: {
-          Cookie: `token=${token}`,
-        },
       }).catch((error) => {
         throw error;
       });
@@ -48,18 +42,12 @@ export const UserProvider = ({ children }) => {
         const refreshResponse = await fetch(`${process.env.BACKEND_URL}/api/auth/refresh`, {
           method: 'POST',
           credentials: 'include',
-          headers: {
-            Cookie: `token=${token}`,
-          },
         });
 
         if (refreshResponse.ok) {
           const retryResponse = await fetch(`${process.env.BACKEND_URL}/api/auth/me`, {
             method: 'GET',
             credentials: 'include',
-            headers: {
-              Cookie: `token=${token}`,
-            },
           });
 
           if (retryResponse.ok) {
