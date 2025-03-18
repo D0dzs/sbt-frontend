@@ -33,7 +33,7 @@ export const UserProvider = ({ children }) => {
     try {
       const response = await fetch(`${process.env.BACKEND_URL}/api/auth/me`, {
         method: 'GET',
-        credentials: 'include',
+        credentials: 'omit',
       }).catch((error) => {
         throw error;
       });
